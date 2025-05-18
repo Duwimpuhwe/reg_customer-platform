@@ -1,0 +1,42 @@
+.navbar-custom {
+  background-color: rgb(228, 124, 124) !important; /* Ensures it overrides Bootstrap */
+}
+.navbar-brand img {
+  height: 40px; /* Adjust the icon size */
+}
+
+/* Optional: Reduce the logo size */
+.navbar-custom img {
+  width: 40px; /* Adjust width and height as needed */
+  height: 40px; 
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensures the image doesn't stretch and maintains aspect ratio */
+}
+
+/* Make the page take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the content area take up available space */
+.content {
+  flex: 1;
+}
+
+/* Ensure the footer is at the bottom */
+footer {
+  margin-top: auto;
+}
+
+/* Make the navbar more compact */
+.navbar-custom {
+    padding: 2px 7px;  /* Reduce padding for smaller navbar */
+}
+
+/* Optional: Reduce the font size of the navbar */
+.navbar-custom .navbar-brand {
+    font-size: 18px;  /* Adjust as needed */
+}

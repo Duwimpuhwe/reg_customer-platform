@@ -1,0 +1,11 @@
+{% extends "customerPrjcts/base.html" %}
+
+{% block title %} successful submission {% endblock %}
+
+{% block content %}
+
+<h2> Application successfully submitted</h2>
+<p>Thank you for your application! We will review your submission and get back to you soon!!</p>
+<a href="{% url 'customerpage' %}" class="btn btn-primary">Submit Another Application</a>
+
+{% endblock %}

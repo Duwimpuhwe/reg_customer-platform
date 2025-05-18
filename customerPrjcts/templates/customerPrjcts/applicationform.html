@@ -1,0 +1,21 @@
+{% extends "customerPrjcts/base.html" %}
+
+{% block title %} REG Customer Pjct | Application {% endblock %}
+
+{% block content %}
+
+<!-- Styled Heading -->
+<h4 class="text-center text-primary fw-bold fst-italic mt-0">
+  Please fill out the customer application form below.
+</h4>
+
+<!-- Application Form -->
+
+<form method="post" enctype="multipart/form-data" class="form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
+

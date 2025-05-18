@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  <!-- to load static files -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}REG Customer projects{% endblock %}</title>
+
+    <!-- Bootstrap & Custom Styles -->
+    <link rel="stylesheet" href="{% static 'customerPrjcts/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'customerPrjcts/css/styles.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Navbar with Icon -->
+    <nav class="navbar navbar-light navbar-custom">
+        <!--
+        <div class="container">
+           
+            <img src="{% static 'customerPrjcts/images/REG_LOGO.jpg' %}" alt="REG_LOGO">
+            Customer projects
+            
+        </div>
+        -->
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo and Title -->
+            <div>
+                <img src="{% static 'customerPrjcts/images/REG_LOGO.jpg' %}" alt="REG_LOGO" height="50">
+                
+            </div>
+
+            <!-- Centered Title -->
+            <div class="flex-grow-1 text-center">
+                <span class="fw-bold">Customer Projects</span>
+            </div>
+    
+            <!-- Authentication Links -->
+            <div>
+                {% if user.is_authenticated %}
+                    <!--<a href="{% url 'logout' %}" class="text-black text-decoration-none fw-bold me-3">Logout</a>-->
+                    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link text-black text-decoration-none fw-bold">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="text-black text-decoration-none fw-bold me-3">Login</a>
+                    <span class="mx-2">|</span> 
+                    <a href="{% url 'register' %}" class="text-black text-decoration-none fw-bold">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container content mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; REG Customer projects | All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap Scripts -->
+    <script src="{% static 'customerPrjcts/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>
