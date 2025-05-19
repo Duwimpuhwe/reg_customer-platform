@@ -33,8 +33,8 @@ SECRET_KEY = config('SECRET_KEY') # added to dynamically retrieve key from .env 
 DEBUG = config('DEBUG', default=False, cast=bool) # added to dynamically retrieve key from .env file
 
 
-ALLOWED_HOSTS = ['REG_Customer_Prjects_App.onrender.com'] # this is added: 'REG_Customer_Prjects_App.onrender.com'
-
+# ALLOWED_HOSTS = ['REG_Customer_Prjects_App.onrender.com'] # this is added: 'REG_Customer_Prjects_App.onrender.com'
+ALLOWED_HOSTS = ['reg-customer-platform.onrender.com'] # corrected to match with the render domain
 
 # Application definition
 
