@@ -3,6 +3,7 @@ from .forms import ProjectApplicationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.views.decorators.cache import never_cache # added for caching
 
 # Create your views here.
 
@@ -26,6 +27,7 @@ def baseCustomer(request):
 def app_successifully(request):
   return render(request,"customerPrjcts/appSuccess.html")
 
+@never_cache
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
